@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.cauzy.project.entities.User;
 import com.cauzy.project.repositories.UserRepository;
+import com.cauzy.project.services.exceptions.ResourceNotFoundException;
 
 @Service //diz que um coponente spring, assim o Autowired funciona
 public class UserService {
@@ -21,7 +22,7 @@ public class UserService {
 	
 	public User findById(Long id) {
 		Optional<User> obj = repository.findById(id);
-		return obj.get(); //retorna o User dentro do optional
+		return obj.orElseThrow(() -> new ResourceNotFoundException(id)); //retorna o User dentro do optional
 	}
 	
 	public User insert(User obj) {

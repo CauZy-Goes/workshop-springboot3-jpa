@@ -3,7 +3,6 @@ package com.cauzy.project.resources;
 import java.net.URI;
 import java.util.List;
 
-import org.slf4j.helpers.Reporter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
