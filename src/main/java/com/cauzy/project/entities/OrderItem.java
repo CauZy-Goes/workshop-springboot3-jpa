@@ -40,6 +40,10 @@ public class OrderItem implements Serializable{
 		id.setOrder(order);
 	}
 	
+	public Double getSubTotal() { // tem que por o get para o json pegar
+		return price * quantity;
+	}
+	
 	public Product getProduct() {
 		return id.getProduct();
 	}
